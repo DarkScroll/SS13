@@ -2150,6 +2150,7 @@
 #include "code\ZAS\Variable Settings.dm"
 #include "code\ZAS\Zone.dm"
 #include "harroway\code\_helpers\localization.dm"
+#include "harroway\code\_helpers\tgui.dm"
 #include "interface\interface.dm"
 #include "interface\skin.dmf"
 #include "maps\_map_include.dm"
