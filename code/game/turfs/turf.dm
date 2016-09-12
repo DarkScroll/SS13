@@ -31,12 +31,14 @@
 		spawn( 0 )
 			src.Entered(AM)
 			return
-	turfs |= src
 
 	if(dynamic_lighting)
 		luminosity = 0
 	else
 		luminosity = 1
+
+/turf/proc/initialize()
+	return
 
 /turf/proc/update_icon()
 	return
@@ -126,7 +128,7 @@ var/const/enterloopsanity = 100
 		var/mob/M = A
 		if(!M.check_solid_ground())
 			inertial_drift(M)
-			//we'll end up checking solid ground again but we still need to check the other things. 
+			//we'll end up checking solid ground again but we still need to check the other things.
 			//Ususally most people aren't in space anyways so hopefully this is acceptable.
 			M.update_floating()
 		else

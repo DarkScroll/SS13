@@ -10,7 +10,7 @@
 		for(var/turf/T in world)
 			if(T.dynamic_lighting)
 				A = T.loc
-				if(A.lighting_use_dynamic)
+				if(A.lighting_use_dynamic && !T.lighting_overlay)
 					var/atom/movable/lighting_overlay/O = PoolOrNew(/atom/movable/lighting_overlay, T)
 					T.lighting_overlay = O
 
@@ -20,6 +20,6 @@
 				var/turf/T = locate(x, y, zlevel)
 				if(T.dynamic_lighting)
 					A = T.loc
-					if(A.lighting_use_dynamic)
+					if(A.lighting_use_dynamic && !T.lighting_overlay)
 						var/atom/movable/lighting_overlay/O = PoolOrNew(/atom/movable/lighting_overlay, T)
 						T.lighting_overlay = O
